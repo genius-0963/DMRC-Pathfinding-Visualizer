@@ -1,0 +1,242 @@
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            overflow: hidden;
+            background: #0a0a0f;
+        }
+
+        /* Cyberpunk Glow Effects */
+        .cyber-glow {
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3),
+                        0 0 40px rgba(0, 255, 255, 0.1),
+                        inset 0 0 20px rgba(0, 255, 255, 0.05);
+        }
+        
+        .cyber-glow-purple {
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.3),
+                        0 0 40px rgba(168, 85, 247, 0.1);
+        }
+        
+        /* Glassmorphism Panel */
+        .glass-panel {
+            background: rgba(10, 10, 20, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 16px;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 3px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 255, 255, 0.5);
+            border-radius: 3px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 255, 255, 0.8);
+        }
+        
+        /* Cyberpunk Select Dropdown */
+        .cyber-select {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            color: #00ffff;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2300ffff'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1.25rem;
+            padding-right: 2.5rem;
+        }
+        
+        .cyber-select:hover {
+            border-color: rgba(0, 255, 255, 0.6);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+        }
+        
+        .cyber-select:focus {
+            border-color: #00ffff;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+        }
+        
+        .cyber-select option {
+            background: #0a0a0f;
+            color: #00ffff;
+            padding: 0.5rem;
+        }
+        
+        /* Cyberpunk Button */
+        .cyber-button {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(168, 85, 247, 0.2));
+            border: 2px solid rgba(0, 255, 255, 0.5);
+            color: #00ffff;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            padding: 0.875rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cyber-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .cyber-button:hover::before {
+            left: 100%;
+        }
+        
+        .cyber-button:hover {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.4), rgba(168, 85, 247, 0.4));
+            border-color: #00ffff;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .cyber-button:active {
+            transform: translateY(0);
+        }
+        
+        .cyber-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        /* Loading Spinner */
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            border-top-color: #00ffff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Timeline Stepper */
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            padding-bottom: 1.5rem;
+            border-left: 2px solid rgba(0, 255, 255, 0.2);
+        }
+        
+        .timeline-item:last-child {
+            border-left: 2px solid transparent;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #0a0a0f;
+            border: 2px solid #00ffff;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+        
+        .timeline-dot.active {
+            background: #00ffff;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+        }
+        
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .animate-slide-in {
+            animation: slideIn 0.5s ease forwards;
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.3s ease forwards;
+        }
+        
+        /* Canvas Container */
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        
+        /* UI Panel - Allow clicks to pass through empty areas */
+        .ui-panel {
+            pointer-events: none;
+        }
+        
+        .ui-panel > * {
+            pointer-events: auto;
+        }
+        
+        /* Line Color Indicators */
+        .line-yellow { color: #FFD700; }
+        .line-blue { color: #0066FF; }
+        .line-magenta { color: #FF00FF; }
+        .line-green { color: #00FF00; }
+        .line-red { color: #FF0000; }
+        .line-violet { color: #8B00FF; }
+        .line-pink { color: #FF69B4; }
+        .line-aqua { color: #00FFFF; }
+        .line-gray { color: #808080; }
+        .line-orange { color: #FFA500; }
+        .line-rapid { color: #FF8C00; }
+        
+        .bg-line-yellow { background-color: #FFD700; }
+        .bg-line-blue { background-color: #0066FF; }
+        .bg-line-magenta { background-color: #FF00FF; }
+        .bg-line-green { background-color: #00FF00; }
+        .bg-line-red { background-color: #FF0000; }
+        .bg-line-violet { background-color: #8B00FF; }
+        .bg-line-pink { background-color: #FF69B4; }
+        .bg-line-aqua { background-color: #00FFFF; }
